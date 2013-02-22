@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.meeuw</groupId>
+  <artifactId>mihxil-json</artifactId>
+  <version>0.1</version>
+  <packaging>jar</packaging>
+
+  <properties>
+    <github.maven.repository>file:///Users/michiel/github/mvn-repo/</github.maven.repository>
+  </properties>
+
+  <scm>
+    <connection>scm:git:git://github.com/mihxil/json.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/mihxil/json.git</developerConnection>
+    <url>https://github.com/mihxil/json</url>
+    <tag>HEAD</tag>
+  </scm>
+
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.8.2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.codehaus.jackson</groupId>
+      <artifactId>jackson-core-asl</artifactId>
+      <version>1.9.4</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <defaultGoal>install</defaultGoal>
+
+    <plugins>
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>2.2-beta-2</version>
+          <executions>
+            <execution>
+              <id>create-executable-jar</id>
+              <phase>package</phase>
+              <goals>
+                <goal>single</goal>
+              </goals>
+              <configuration>
+                <descriptorRefs>
+                  <descriptorRef>jar-with-dependencies</descriptorRef>
+                </descriptorRefs>
+                <archive>
+                  <manifest>
+                    <mainClass>org.meeuw.json.Formatter</mainClass>
+                  </manifest>
+                </archive>
+              </configuration>
+            </execution>
+        </executions>
+      </plugin>
+    </plugins>
+
+  </build>
+
+  <distributionManagement>
+    <repository>
+      <id>repo</id>
+      <url>${github.maven.repository}/releases</url>
+    </repository>
+    <snapshotRepository>
+      <id>snapshot-repo</id>
+      <url>${github.maven.repository}/snapshots</url>
+    </snapshotRepository>
+  </distributionManagement>
+
+
+</project>
