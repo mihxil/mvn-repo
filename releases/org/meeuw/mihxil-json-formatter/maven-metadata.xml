@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <metadata>
   <groupId>org.meeuw</groupId>
-  <artifactId>mihxil-json</artifactId>
+  <artifactId>mihxil-json-formatter</artifactId>
   <versioning>
     <release>0.6</release>
     <versions>
-      <version>0.1</version>
-      <version>0.2</version>
-      <version>0.3</version>
       <version>0.6</version>
     </versions>
-    <lastUpdated>20140704142106</lastUpdated>
+    <lastUpdated>20140704142104</lastUpdated>
   </versioning>
 </metadata>
